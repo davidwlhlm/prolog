@@ -5,10 +5,9 @@ domino(L, R) :-
     (valid([(V1-V2)|T], R); valid([(V2-V1)|T], R)).
 
 valid([R], [R]).
-valid([(V11-V12),(V21-V22)|T], R) :-
-    V12 = V21,
-    valid([(V21-V22)|T], R2),
-    R = [(V11-V12)|R2];
-    V12 = V22,
-    valid([(V22-V21)|T], R2),
-    R = [(V11-V12)|R2].
+
+valid([(V1-V),(V-V2)|T], [(V1-V)|R2]) :-
+    valid([(V-V2)|T], R2).
+
+valid([(V1-V),(V2-V)|T], [(V1-V)|R2]) :-
+    valid([(V-V2)|T], R2).

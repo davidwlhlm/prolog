@@ -4,8 +4,8 @@ prefixSum(L, R) :-
     reverse(R2, R).
 
 prefixSumReversed([], []).
-prefixSumReversed([H | T], R) :-
+
+prefixSumReversed([H|T], [H2|R2]) :-
     prefixSumReversed(T, R2),
     sum_list(T, S),
-    H2 is H + S,
-    R = [H2 | R2].
+    H2 is H + S.

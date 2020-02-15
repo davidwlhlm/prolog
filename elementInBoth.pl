@@ -1,3 +1,2 @@
-elementInBoth([H], L) :- member(H, L).
-elementInBoth([H, _], L) :- member(H, L).
-elementInBoth([H|T], L) :- elementInBoth(T, L).
+elementInBoth([H|_], L) :- member(H, L).
+elementInBoth([_|T], L) :- elementInBoth(T, L).

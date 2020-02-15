@@ -1,9 +1,8 @@
 % replacenth0/3 helper
 replacenth0(0, [_|T], E, L) :- L = [E|T].
-replacenth0(I, [H|T], E, L) :-
+replacenth0(I, [H|T], E, [H|L2]) :-
     I2 is I - 1,
-    replacenth0(I2, T, E, L2),
-    L = [H|L2].
+    replacenth0(I2, T, E, L2).
 
 % hist/2
 hist(L, R) :-
