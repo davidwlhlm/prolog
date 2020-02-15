@@ -1,6 +1,5 @@
 kRemove([H|T], 1, H, T).
 
-kRemove([H|T], I, E, R) :-
+kRemove([H|T], I, E, [H|R2]) :-
     I2 is I - 1,
-    kRemove(T, I2, E, R2),
-    R = [H|R2].
+    kRemove(T, I2, E, R2).
