@@ -13,12 +13,14 @@ R = [5, 6, 7, 8, 9].
 
 #### domino/2
 
-Given a list L of domino tiles (represented as pair), arranges all tiles that the right number of each tile is equal to the left number of the tile to its right and the left number of each tile is equal to the right number of the tile to its left. R should return **all** possible solutions.
+Given a list L of domino tiles (represented as pair), arranges all tiles that the right number of each tile is equal to the left number of the tile to its right and the left number of each tile is equal to the right number of the tile to its left. R returns **all** possible solutions.
 
+```prolog
 ?- domino([2-1, 3-4, 5-2, 5-4], R).
 R = [1-2, 2-5, 5-4, 4-3] ;
 R = [3-4, 4-5, 5-2, 2-1] ;
 false.
+```
 
 #### dropn/3
 
@@ -79,7 +81,7 @@ Determines if X is an element of list L. Hint: SWI-Prolog also has a build-in me
 
 ```prolog
 ?- member(b, [a,b,c,d,e]).
-true .
+true.
 
 ?- member(x, [a,b,c,d,e]).
 false.
@@ -108,7 +110,7 @@ R = [1, 3, 6, 10].
 
 #### removeDuplicates/2
 
-Removes all duplicates in a given list L.
+Removes all duplicates in a given list L and binds the result to R.
 
 ```prolog
 ?- removeDuplicates([a,b,a,b], R).
@@ -117,7 +119,7 @@ R = [a, b].
 
 #### slice/4
 
-Extract a sublist from a list L which contains elements between the I’th and K’th element of the original list and bind the result to R.
+Extracts a sublist from a list L which contains elements between the I’th and K’th element of the original list and binds the result to R.
 
 ```prolog
 ?- slice([a,b,b,d,c,d,b,b,d,a,d], 2, 6, R).
